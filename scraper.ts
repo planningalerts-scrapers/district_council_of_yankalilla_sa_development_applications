@@ -399,7 +399,7 @@ function formatAddress(houseNumber: string, streetName: string, suburbName: stri
     suburbName = suburbName.replace(/^HD /, "").replace(/ HD$/, "").replace(/ SA$/, "").trim();
     suburbName = SuburbNames[suburbName] || suburbName;
     let separator = ((houseNumber !== "" || streetName !== "") && suburbName !== "") ? ", " : "";
-    return `${houseNumber} ${streetName}${separator}${suburbName}`.trim().replace(/\s\s+/g, " ").toUpperCase();
+    return `${houseNumber} ${streetName}${separator}${suburbName}`.trim().replace(/\s\s+/g, " ").toUpperCase().replace(/\*/g, "");
 }
 
 // Parses the address from the house number, street name and suburb name.  Note that these
